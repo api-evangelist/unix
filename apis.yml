@@ -1,0 +1,344 @@
+name: UNIX System Call API
+description: Core UNIX/POSIX system calls providing low-level operating system interfaces for process management, file operations, interprocess communication, and system control
+image: https://example.com/unix-logo.png
+created: '2024-01-15'
+modified: '2024-01-15'
+specificationVersion: '0.18'
+url: https://example.com/apis/unix/apis.yaml
+apis:
+- name: File System Operations API
+  description: System calls for file and directory manipulation, including open, read, write, and file descriptor management
+  image: https://example.com/filesystem-icon.png
+  humanUrl: https://man7.org/linux/man-pages/dir_section_2.html
+  baseUrl: system://unix/fs
+  tags:
+  - filesystem
+  - io
+  - files
+  - directories
+  properties:
+  - type: Documentation
+    url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html
+  - type: Man Pages
+    url: https://man7.org/linux/man-pages/man2/
+  contact:
+  - FN: POSIX Standards Committee
+    email: standards@opengroup.org
+  operations:
+  - name: open
+    description: Open file and return file descriptor
+    parameters:
+    - pathname
+    - flags
+    - mode
+    returns: file descriptor (int)
+  - name: read
+    description: Read bytes from a file descriptor
+    parameters:
+    - fd
+    - buf
+    - count
+    returns: number of bytes read
+  - name: write
+    description: Write bytes to a file descriptor
+    parameters:
+    - fd
+    - buf
+    - count
+    returns: number of bytes written
+  - name: close
+    description: Close a file descriptor
+    parameters:
+    - fd
+    returns: 0 on success, -1 on error
+  - name: lseek
+    description: Reposition file offset
+    parameters:
+    - fd
+    - offset
+    - whence
+    returns: resulting offset
+  - name: stat
+    description: Get file status
+    parameters:
+    - pathname
+    - statbuf
+    returns: 0 on success, -1 on error
+  - name: chmod
+    description: Change file permissions
+    parameters:
+    - pathname
+    - mode
+    returns: 0 on success, -1 on error
+  - name: chown
+    description: Change file owner and group
+    parameters:
+    - pathname
+    - owner
+    - group
+    returns: 0 on success, -1 on error
+  - name: mkdir
+    description: Create a directory
+    parameters:
+    - pathname
+    - mode
+    returns: 0 on success, -1 on error
+  - name: rmdir
+    description: Remove a directory
+    parameters:
+    - pathname
+    returns: 0 on success, -1 on error
+- name: Process Management API
+  description: System calls for process creation, execution, termination, and control
+  image: https://example.com/process-icon.png
+  humanUrl: https://man7.org/linux/man-pages/man2/fork.2.html
+  baseUrl: system://unix/process
+  tags:
+  - processes
+  - execution
+  - scheduling
+  properties:
+  - type: Documentation
+    url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html
+  - type: Tutorial
+    url: https://www.gnu.org/software/libc/manual/html_node/Processes.html
+  operations:
+  - name: fork
+    description: Create a new process by duplicating the calling process
+    parameters: []
+    returns: PID of child (in parent), 0 (in child), -1 on error
+  - name: exec
+    description: Execute a program (family of functions - execl, execv, execve, etc.)
+    parameters:
+    - pathname
+    - argv
+    - envp
+    returns: does not return on success, -1 on error
+  - name: wait
+    description: Wait for process to change state
+    parameters:
+    - status
+    returns: PID of terminated child
+  - name: waitpid
+    description: Wait for specific process to change state
+    parameters:
+    - pid
+    - status
+    - options
+    returns: PID of child
+  - name: exit
+    description: Terminate the calling process
+    parameters:
+    - status
+    returns: does not return
+  - name: getpid
+    description: Get process ID
+    parameters: []
+    returns: process ID
+  - name: getppid
+    description: Get parent process ID
+    parameters: []
+    returns: parent process ID
+  - name: kill
+    description: Send signal to a process
+    parameters:
+    - pid
+    - sig
+    returns: 0 on success, -1 on error
+  - name: nice
+    description: Change process priority
+    parameters:
+    - inc
+    returns: new nice value
+- name: Interprocess Communication API
+  description: System calls for communication between processes including pipes, signals, and shared memory
+  image: https://example.com/ipc-icon.png
+  humanUrl: https://man7.org/linux/man-pages/man7/pipe.7.html
+  baseUrl: system://unix/ipc
+  tags:
+  - ipc
+  - signals
+  - pipes
+  - sockets
+  - shared-memory
+  properties:
+  - type: Documentation
+    url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html
+  - type: Examples
+    url: https://beej.us/guide/bgipc/
+  operations:
+  - name: pipe
+    description: Create a pipe for interprocess communication
+    parameters:
+    - pipefd[2]
+    returns: 0 on success, -1 on error
+  - name: signal
+    description: Install signal handler
+    parameters:
+    - signum
+    - handler
+    returns: previous signal handler
+  - name: sigaction
+    description: Examine and change signal action
+    parameters:
+    - signum
+    - act
+    - oldact
+    returns: 0 on success, -1 on error
+  - name: socket
+    description: Create an endpoint for communication
+    parameters:
+    - domain
+    - type
+    - protocol
+    returns: file descriptor
+  - name: bind
+    description: Bind a name to a socket
+    parameters:
+    - sockfd
+    - addr
+    - addrlen
+    returns: 0 on success, -1 on error
+  - name: listen
+    description: Listen for connections on a socket
+    parameters:
+    - sockfd
+    - backlog
+    returns: 0 on success, -1 on error
+  - name: accept
+    description: Accept a connection on a socket
+    parameters:
+    - sockfd
+    - addr
+    - addrlen
+    returns: file descriptor
+  - name: connect
+    description: Initiate a connection on a socket
+    parameters:
+    - sockfd
+    - addr
+    - addrlen
+    returns: 0 on success, -1 on error
+  - name: shmget
+    description: Allocate shared memory segment
+    parameters:
+    - key
+    - size
+    - shmflg
+    returns: shared memory identifier
+  - name: shmat
+    description: Attach shared memory segment
+    parameters:
+    - shmid
+    - shmaddr
+    - shmflg
+    returns: pointer to shared memory
+- name: Memory Management API
+  description: System calls for memory allocation, mapping, and protection
+  image: https://example.com/memory-icon.png
+  humanUrl: https://man7.org/linux/man-pages/man2/mmap.2.html
+  baseUrl: system://unix/memory
+  tags:
+  - memory
+  - mmap
+  - allocation
+  properties:
+  - type: Documentation
+    url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mmap.html
+  operations:
+  - name: brk
+    description: Change data segment size
+    parameters:
+    - addr
+    returns: 0 on success, -1 on error
+  - name: sbrk
+    description: Change data segment size
+    parameters:
+    - increment
+    returns: previous program break
+  - name: mmap
+    description: Map files or devices into memory
+    parameters:
+    - addr
+    - length
+    - prot
+    - flags
+    - fd
+    - offset
+    returns: pointer to mapped area
+  - name: munmap
+    description: Unmap files or devices from memory
+    parameters:
+    - addr
+    - length
+    returns: 0 on success, -1 on error
+  - name: mprotect
+    description: Set protection on a region of memory
+    parameters:
+    - addr
+    - len
+    - prot
+    returns: 0 on success, -1 on error
+  - name: mlock
+    description: Lock memory into RAM
+    parameters:
+    - addr
+    - len
+    returns: 0 on success, -1 on error
+- name: System Information API
+  description: System calls for retrieving system information and configuration
+  image: https://example.com/sysinfo-icon.png
+  humanUrl: https://man7.org/linux/man-pages/man2/uname.2.html
+  baseUrl: system://unix/sysinfo
+  tags:
+  - system
+  - configuration
+  - information
+  properties:
+  - type: Documentation
+    url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/uname.html
+  operations:
+  - name: uname
+    description: Get system information
+    parameters:
+    - buf
+    returns: 0 on success, -1 on error
+  - name: getuid
+    description: Get user identity
+    parameters: []
+    returns: user ID
+  - name: getgid
+    description: Get group identity
+    parameters: []
+    returns: group ID
+  - name: geteuid
+    description: Get effective user ID
+    parameters: []
+    returns: effective user ID
+  - name: getegid
+    description: Get effective group ID
+    parameters: []
+    returns: effective group ID
+  - name: time
+    description: Get time in seconds since Epoch
+    parameters:
+    - tloc
+    returns: time value
+  - name: gettimeofday
+    description: Get time with microsecond precision
+    parameters:
+    - tv
+    - tz
+    returns: 0 on success, -1 on error
+maintainers:
+- FN: The Open Group
+  email: standards@opengroup.org
+  url: https://www.opengroup.org/
+tags:
+- unix
+- posix
+- system-calls
+- operating-system
+- c-api
+- kernel
+include: []
