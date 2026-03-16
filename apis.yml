@@ -1,4 +1,4 @@
-name: UNIX System Call API
+name: UNIX System Call
 description: Core UNIX/POSIX system calls providing low-level operating system interfaces for process management, file operations, interprocess communication, and system control
 image: https://example.com/unix-logo.png
 created: '2024-01-15'
