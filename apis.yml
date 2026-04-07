@@ -8,14 +8,14 @@ modified: '2026-03-16'
 specificationVersion: '0.18'
 url: https://example.com/apis/unix/apis.yaml
 tags:
-  - unix
-  - posix
-  - system-calls
-  - operating-system
-  - c-api
-  - kernel
-  - ieee-1003
-  - open-group
+  - C-Api
+  - Ieee-1003
+  - Kernel
+  - Open-Group
+  - Operating-System
+  - Posix
+  - System-Calls
+  - Unix
 common:
   - type: Specification
     url: https://pubs.opengroup.org/onlinepubs/9799919799/
@@ -40,19 +40,17 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/dir_section_2.html
     baseUrl: system://unix/fs
     tags:
-      - filesystem
-      - io
-      - files
-      - directories
+      - Directories
+      - Files
+      - Filesystem
+      - Io
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html
       - type: Man Pages
         url: https://man7.org/linux/man-pages/man2/
       - type: Specification (Issue 8)
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9799919799/functions/open.html
+        url: https://pubs.opengroup.org/onlinepubs/9799919799/functions/open.html
     contact:
       - FN: POSIX Standards Committee
         email: standards@opengroup.org
@@ -174,8 +172,7 @@ apis:
           - oldfd
         returns: new file descriptor
       - name: dup2
-        description: Duplicate a file descriptor to a specified descriptor 
-          number
+        description: Duplicate a file descriptor to a specified descriptor number
         parameters:
           - oldfd
           - newfd
@@ -248,13 +245,12 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man2/fork.2.html
     baseUrl: system://unix/process
     tags:
-      - processes
-      - execution
-      - scheduling
+      - Execution
+      - Processes
+      - Scheduling
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html
       - type: Tutorial
         url: https://sourceware.org/glibc/manual/
       - type: Man Pages
@@ -265,8 +261,7 @@ apis:
         parameters: []
         returns: PID of child (in parent), 0 (in child), -1 on error
       - name: exec
-        description: Execute a program (family of functions - execl, execv, 
-          execve, etc.)
+        description: Execute a program (family of functions - execl, execv, execve, etc.)
         parameters:
           - pathname
           - argv
@@ -367,15 +362,14 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man7/pipe.7.html
     baseUrl: system://unix/ipc
     tags:
-      - ipc
-      - signals
-      - pipes
-      - sockets
-      - shared-memory
+      - Ipc
+      - Pipes
+      - Shared-Memory
+      - Signals
+      - Sockets
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html
       - type: Examples
         url: https://beej.us/guide/bgipc/
       - type: Network Programming Guide
@@ -589,14 +583,13 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man2/mmap.2.html
     baseUrl: system://unix/memory
     tags:
-      - memory
-      - mmap
-      - allocation
-      - virtual-memory
+      - Allocation
+      - Memory
+      - Mmap
+      - Virtual-Memory
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/mmap.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mmap.html
       - type: Man Pages
         url: https://man7.org/linux/man-pages/man2/mmap.2.html
     operations:
@@ -646,8 +639,7 @@ apis:
           - len
         returns: 0 on success, -1 on error
       - name: msync
-        description: Synchronize a memory-mapped file with its underlying 
-          storage
+        description: Synchronize a memory-mapped file with its underlying storage
         parameters:
           - addr
           - length
@@ -686,15 +678,14 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man2/uname.2.html
     baseUrl: system://unix/sysinfo
     tags:
-      - system
-      - configuration
-      - information
-      - users
-      - groups
+      - Configuration
+      - Groups
+      - Information
+      - System
+      - Users
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/uname.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/uname.html
       - type: Man Pages
         url: https://man7.org/linux/man-pages/man2/uname.2.html
     operations:
@@ -809,22 +800,20 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man7/pthreads.7.html
     baseUrl: system://unix/pthreads
     tags:
-      - threads
-      - pthreads
-      - concurrency
-      - synchronization
-      - mutexes
+      - Concurrency
+      - Mutexes
+      - Pthreads
+      - Synchronization
+      - Threads
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_create.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_create.html
       - type: Man Pages
         url: https://man7.org/linux/man-pages/man7/pthreads.7.html
       - type: Header Reference
         url: https://man7.org/linux/man-pages/man0/pthread.h.0p.html
       - type: Specification (Issue 8)
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_create.html
+        url: https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_create.html
     operations:
       - name: pthread_create
         description: Create a new thread
@@ -980,24 +969,22 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man2/select.2.html
     baseUrl: system://unix/io-multiplex
     tags:
-      - io
-      - multiplexing
-      - select
-      - poll
-      - event-driven
-      - non-blocking
+      - Event-Driven
+      - Io
+      - Multiplexing
+      - Non-Blocking
+      - Poll
+      - Select
     properties:
       - type: Documentation
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/select.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/select.html
       - type: Man Pages
         url: https://man7.org/linux/man-pages/man2/select.2.html
       - type: Tutorial
         url: https://man7.org/linux/man-pages/man2/select_tut.2.html
     operations:
       - name: select
-        description: Monitor multiple file descriptors for readiness using 
-          fd_set bitmasks
+        description: Monitor multiple file descriptors for readiness using fd_set bitmasks
         parameters:
           - nfds
           - readfds
@@ -1006,8 +993,7 @@ apis:
           - timeout
         returns: number of ready descriptors, 0 on timeout, -1 on error
       - name: pselect
-        description: Synchronous I/O multiplexing with signal mask and timespec 
-          timeout
+        description: Synchronous I/O multiplexing with signal mask and timespec timeout
         parameters:
           - nfds
           - readfds
@@ -1038,16 +1024,15 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man7/sem_overview.7.html
     baseUrl: system://unix/semaphores
     tags:
-      - semaphores
-      - synchronization
-      - ipc
-      - concurrency
+      - Concurrency
+      - Ipc
+      - Semaphores
+      - Synchronization
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man7/sem_overview.7.html
       - type: Specification
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/sem_open.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/sem_open.html
     operations:
       - name: sem_open
         description: Open or create a named semaphore
@@ -1114,16 +1099,15 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man7/mq_overview.7.html
     baseUrl: system://unix/mqueue
     tags:
-      - message-queues
-      - ipc
-      - messaging
-      - asynchronous
+      - Asynchronous
+      - Ipc
+      - Message-Queues
+      - Messaging
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man7/mq_overview.7.html
       - type: Specification
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/mq_open.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mq_open.html
     operations:
       - name: mq_open
         description: Open or create a POSIX message queue
@@ -1204,19 +1188,18 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man3/termios.3.html
     baseUrl: system://unix/terminal
     tags:
-      - terminal
-      - tty
-      - termios
-      - device-io
-      - serial
+      - Device-Io
+      - Serial
+      - Terminal
+      - Termios
+      - Tty
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man3/termios.3.html
       - type: Header Reference
         url: https://man7.org/linux/man-pages/man0/termios.h.0p.html
       - type: Specification
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/termios.h.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/termios.h.html
     operations:
       - name: tcgetattr
         description: Get terminal attributes
@@ -1282,14 +1265,12 @@ apis:
           - fd
         returns: 1 if terminal, 0 if not
       - name: ttyname
-        description: Get the name of the terminal associated with a file 
-          descriptor
+        description: Get the name of the terminal associated with a file descriptor
         parameters:
           - fd
         returns: pointer to terminal name string
       - name: ioctl
-        description: Control device parameters and perform device-specific 
-          operations
+        description: Control device parameters and perform device-specific operations
         parameters:
           - fd
           - request
@@ -1303,16 +1284,15 @@ apis:
     humanUrl: https://man7.org/linux/man-pages/man2/fcntl.2.html
     baseUrl: system://unix/file-locking
     tags:
-      - file-locking
-      - advisory-locking
-      - concurrency
-      - fcntl
+      - Advisory-Locking
+      - Concurrency
+      - Fcntl
+      - File-Locking
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man2/fcntl.2.html
       - type: Specification
-        url: 
-          https://pubs.opengroup.org/onlinepubs/9699919799/functions/fcntl.html
+        url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fcntl.html
     operations:
       - name: fcntl (F_SETLK)
         description: Set or release an advisory file lock without blocking
