@@ -1,12 +1,15 @@
+aid: unix
 name: UNIX System Call
 description: >-
   Core UNIX/POSIX system calls providing low-level operating system interfaces for
   process management, file operations, interprocess communication, and system control.
-image: https://example.com/unix-logo.png
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/unix/refs/heads/main/apis.yml
+type: Index
 created: '2024-01-15'
-modified: '2026-03-16'
+modified: '2026-04-18'
 specificationVersion: '0.18'
-url: https://example.com/apis/unix/apis.yaml
 tags:
   - C-Api
   - Ieee-1003
@@ -17,28 +20,56 @@ tags:
   - System-Calls
   - Unix
 common:
-  - type: Specification
+  - type: Documentation
     url: https://pubs.opengroup.org/onlinepubs/9799919799/
-  - type: Specification (Issue 7)
+  - type: Documentation
     url: https://pubs.opengroup.org/onlinepubs/9699919799/
-  - type: Man Pages
+  - type: Documentation
     url: https://man7.org/linux/man-pages/dir_section_2.html
-  - type: GNU C Library Manual
+  - type: GettingStarted
     url: https://sourceware.org/glibc/manual/
-  - type: Wikipedia
+  - type: Resources
     url: https://en.wikipedia.org/wiki/POSIX
-  - type: API Tables
+  - type: APIReference
     url: https://unix.org/apis.html
-  - type: IEEE Standard
+  - type: Documentation
     url: https://standards.ieee.org/ieee/1003.1/7700/
+  - type: Features
+    data:
+      - File system operations and file descriptor management
+      - Process creation, execution, and control
+      - Interprocess communication via pipes, signals, and sockets
+      - Memory mapping and virtual memory management
+      - POSIX threads for concurrent programming
+      - I/O multiplexing with select and poll
+      - Named and unnamed semaphores
+      - Message queues for async process communication
+      - Terminal and device I/O control
+      - Advisory file locking
+  - type: UseCases
+    data:
+      - Operating system development
+      - Systems programming and embedded systems
+      - Network server and daemon development
+      - High-performance I/O applications
+      - Concurrent and multi-threaded programming
+      - Device driver and hardware interface development
+  - type: Integrations
+    data:
+      - Linux kernel
+      - macOS / Darwin
+      - FreeBSD
+      - GNU C Library (glibc)
+      - musl libc
+      - POSIX-compliant operating systems
 apis:
   - name: File System Operations API
     description: >-
       System calls for file and directory manipulation, including open, read, write,
       and file descriptor management.
-    image: https://example.com/filesystem-icon.png
-    humanUrl: https://man7.org/linux/man-pages/dir_section_2.html
-    baseUrl: system://unix/fs
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/dir_section_2.html
+    baseURL: system://unix/fs
     tags:
       - Directories
       - Files
@@ -47,9 +78,9 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man2/
-      - type: Specification (Issue 8)
+      - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9799919799/functions/open.html
     contact:
       - FN: POSIX Standards Committee
@@ -241,9 +272,9 @@ apis:
   - name: Process Management API
     description: >-
       System calls for process creation, execution, termination, and control.
-    image: https://example.com/process-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man2/fork.2.html
-    baseUrl: system://unix/process
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man2/fork.2.html
+    baseURL: system://unix/process
     tags:
       - Execution
       - Processes
@@ -251,9 +282,9 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html
-      - type: Tutorial
+      - type: GettingStarted
         url: https://sourceware.org/glibc/manual/
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man2/fork.2.html
     operations:
       - name: fork
@@ -358,9 +389,9 @@ apis:
     description: >-
       System calls for communication between processes including pipes, signals, and
       shared memory.
-    image: https://example.com/ipc-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man7/pipe.7.html
-    baseUrl: system://unix/ipc
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man7/pipe.7.html
+    baseURL: system://unix/ipc
     tags:
       - Ipc
       - Pipes
@@ -370,11 +401,11 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html
-      - type: Examples
+      - type: CodeExamples
         url: https://beej.us/guide/bgipc/
-      - type: Network Programming Guide
+      - type: GettingStarted
         url: https://beej.us/guide/bgnet/html/
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man7/pipe.7.html
     operations:
       - name: pipe
@@ -579,9 +610,9 @@ apis:
   - name: Memory Management API
     description: >-
       System calls for memory allocation, mapping, and protection.
-    image: https://example.com/memory-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man2/mmap.2.html
-    baseUrl: system://unix/memory
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man2/mmap.2.html
+    baseURL: system://unix/memory
     tags:
       - Allocation
       - Memory
@@ -590,7 +621,7 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mmap.html
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man2/mmap.2.html
     operations:
       - name: brk
@@ -674,9 +705,9 @@ apis:
   - name: System Information API
     description: >-
       System calls for retrieving system information and configuration.
-    image: https://example.com/sysinfo-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man2/uname.2.html
-    baseUrl: system://unix/sysinfo
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man2/uname.2.html
+    baseURL: system://unix/sysinfo
     tags:
       - Configuration
       - Groups
@@ -686,7 +717,7 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/uname.html
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man2/uname.2.html
     operations:
       - name: uname
@@ -796,9 +827,9 @@ apis:
     description: >-
       POSIX threads (pthreads) interface for creating and managing threads, mutexes,
       condition variables, and thread-specific data.
-    image: https://example.com/threads-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man7/pthreads.7.html
-    baseUrl: system://unix/pthreads
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man7/pthreads.7.html
+    baseURL: system://unix/pthreads
     tags:
       - Concurrency
       - Mutexes
@@ -808,11 +839,11 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_create.html
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man7/pthreads.7.html
-      - type: Header Reference
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man0/pthread.h.0p.html
-      - type: Specification (Issue 8)
+      - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_create.html
     operations:
       - name: pthread_create
@@ -965,9 +996,9 @@ apis:
     description: >-
       System calls for monitoring multiple file descriptors for readiness, enabling
       event-driven and non-blocking I/O patterns.
-    image: https://example.com/io-multiplex-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man2/select.2.html
-    baseUrl: system://unix/io-multiplex
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man2/select.2.html
+    baseURL: system://unix/io-multiplex
     tags:
       - Event-Driven
       - Io
@@ -978,9 +1009,9 @@ apis:
     properties:
       - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/select.html
-      - type: Man Pages
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man2/select.2.html
-      - type: Tutorial
+      - type: Tutorials
         url: https://man7.org/linux/man-pages/man2/select_tut.2.html
     operations:
       - name: select
@@ -1020,9 +1051,9 @@ apis:
   - name: POSIX Semaphores API
     description: >-
       POSIX named and unnamed semaphore interfaces for process and thread synchronization.
-    image: https://example.com/semaphore-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man7/sem_overview.7.html
-    baseUrl: system://unix/semaphores
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man7/sem_overview.7.html
+    baseURL: system://unix/semaphores
     tags:
       - Concurrency
       - Ipc
@@ -1031,7 +1062,7 @@ apis:
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man7/sem_overview.7.html
-      - type: Specification
+      - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/sem_open.html
     operations:
       - name: sem_open
@@ -1095,9 +1126,9 @@ apis:
     description: >-
       POSIX message queue interfaces for exchanging messages between processes with
       priority support.
-    image: https://example.com/mq-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man7/mq_overview.7.html
-    baseUrl: system://unix/mqueue
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man7/mq_overview.7.html
+    baseURL: system://unix/mqueue
     tags:
       - Asynchronous
       - Ipc
@@ -1106,7 +1137,7 @@ apis:
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man7/mq_overview.7.html
-      - type: Specification
+      - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mq_open.html
     operations:
       - name: mq_open
@@ -1184,9 +1215,9 @@ apis:
     description: >-
       POSIX terminal interface (termios) and device control system calls for managing
       terminals, serial ports, and device parameters.
-    image: https://example.com/terminal-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man3/termios.3.html
-    baseUrl: system://unix/terminal
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man3/termios.3.html
+    baseURL: system://unix/terminal
     tags:
       - Device-Io
       - Serial
@@ -1196,9 +1227,9 @@ apis:
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man3/termios.3.html
-      - type: Header Reference
+      - type: APIReference
         url: https://man7.org/linux/man-pages/man0/termios.h.0p.html
-      - type: Specification
+      - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/termios.h.html
     operations:
       - name: tcgetattr
@@ -1280,9 +1311,9 @@ apis:
     description: >-
       POSIX advisory file locking interfaces for coordinating file access between
       processes.
-    image: https://example.com/lock-icon.png
-    humanUrl: https://man7.org/linux/man-pages/man2/fcntl.2.html
-    baseUrl: system://unix/file-locking
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://man7.org/linux/man-pages/man2/fcntl.2.html
+    baseURL: system://unix/file-locking
     tags:
       - Advisory-Locking
       - Concurrency
@@ -1291,7 +1322,7 @@ apis:
     properties:
       - type: Documentation
         url: https://man7.org/linux/man-pages/man2/fcntl.2.html
-      - type: Specification
+      - type: Documentation
         url: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fcntl.html
     operations:
       - name: fcntl (F_SETLK)
@@ -1332,4 +1363,3 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
     url: https://apievangelist.com
-include: []
