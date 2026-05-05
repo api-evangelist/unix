@@ -1,0 +1,232 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: UNIX System Call
+providerId: unix
+publisherName: UNIX System Call
+serviceCategory: API
+created: '2026-05-04'
+modified: '2026-05-04'
+tags:
+  - C-Api
+  - Ieee-1003
+  - Kernel
+  - Open-Group
+  - Operating-System
+  - Posix
+  - System-Calls
+  - Unix
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: FinOps framework definition for the UNIX System Call API surface. Provides a FOCUS-aligned
+  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+principles:
+  - name: Visibility
+    description: Make API consumption costs visible to engineering, product, and finance teams in near
+      real-time.
+  - name: Allocation
+    description: Tag every chargeable API call with the consuming team, environment, application, and
+      feature so cost can be allocated.
+  - name: Optimization
+    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
+      cost per useful unit of work.
+  - name: Accountability
+    description: Establish budget owners and chargeback or showback flows for each consuming team.
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Benchmarking
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+      - Cloud Sustainability
+      - Licensing and SaaS
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - FinOps Education and Enablement
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+      - Intersecting Disciplines
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  chargeFrequency: Recurring
+focusColumns:
+  ServiceName: UNIX System Call
+  ServiceCategory: Developer Tools / API
+  ProviderName: UNIX System Call
+  PublisherName: UNIX System Call
+  InvoiceIssuerName: UNIX System Call
+  PricingCategory: Usage-Based
+  PricingUnit: request
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: api_requests
+    description: Count of billable API requests
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+      - region
+      - consumer
+  - name: data_egress
+    description: Bytes returned over the network in API responses
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - api
+      - region
+      - consumer
+  - name: compute_seconds
+    description: Server-side compute consumed by the request, where applicable
+    unit: second
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+apis:
+  - name: File System Operations API
+    baseURL: system://unix/fs
+    tags:
+      - Directories
+      - Files
+      - Filesystem
+      - Io
+    serviceName: File System Operations API
+    serviceCategory: API
+  - name: Process Management API
+    baseURL: system://unix/process
+    tags:
+      - Execution
+      - Processes
+      - Scheduling
+    serviceName: Process Management API
+    serviceCategory: API
+  - name: Interprocess Communication API
+    baseURL: system://unix/ipc
+    tags:
+      - Ipc
+      - Pipes
+      - Shared-Memory
+      - Signals
+      - Sockets
+    serviceName: Interprocess Communication API
+    serviceCategory: API
+  - name: Memory Management API
+    baseURL: system://unix/memory
+    tags:
+      - Allocation
+      - Memory
+      - Mmap
+      - Virtual-Memory
+    serviceName: Memory Management API
+    serviceCategory: API
+  - name: System Information API
+    baseURL: system://unix/sysinfo
+    tags:
+      - Configuration
+      - Groups
+      - Information
+      - System
+      - Users
+    serviceName: System Information API
+    serviceCategory: API
+  - name: POSIX Threads API
+    baseURL: system://unix/pthreads
+    tags:
+      - Concurrency
+      - Mutexes
+      - Pthreads
+      - Synchronization
+      - Threads
+    serviceName: POSIX Threads API
+    serviceCategory: API
+  - name: I/O Multiplexing API
+    baseURL: system://unix/io-multiplex
+    tags:
+      - Event-Driven
+      - Io
+      - Multiplexing
+      - Non-Blocking
+      - Poll
+      - Select
+    serviceName: I/O Multiplexing API
+    serviceCategory: API
+  - name: POSIX Semaphores API
+    baseURL: system://unix/semaphores
+    tags:
+      - Concurrency
+      - Ipc
+      - Semaphores
+      - Synchronization
+    serviceName: POSIX Semaphores API
+    serviceCategory: API
+  - name: POSIX Message Queues API
+    baseURL: system://unix/mqueue
+    tags:
+      - Asynchronous
+      - Ipc
+      - Message-Queues
+      - Messaging
+    serviceName: POSIX Message Queues API
+    serviceCategory: API
+  - name: Terminal and Device I/O API
+    baseURL: system://unix/terminal
+    tags:
+      - Device-Io
+      - Serial
+      - Terminal
+      - Termios
+      - Tty
+    serviceName: Terminal and Device I/O API
+    serviceCategory: API
+  - name: File Locking API
+    baseURL: system://unix/file-locking
+    tags:
+      - Advisory-Locking
+      - Concurrency
+      - Fcntl
+      - File-Locking
+    serviceName: File Locking API
+    serviceCategory: API
+unitEconomics:
+  - name: Cost per 1K Requests
+    metric: billed_cost / (api_requests / 1000)
+    target: TBD
+  - name: Cost per Active Consumer
+    metric: billed_cost / active_consumers
+    target: TBD
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+    url: https://apievangelist.com
