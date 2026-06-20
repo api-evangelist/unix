@@ -3,7 +3,7 @@ name: UNIX System Call
 description: >-
   Core UNIX/POSIX system calls providing low-level operating system interfaces for
   process management, file operations, interprocess communication, and system control.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/unix/refs/heads/main/apis.yml
 type: Index
@@ -67,7 +67,7 @@ apis:
     description: >-
       System calls for file and directory manipulation, including open, read, write,
       and file descriptor management.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/dir_section_2.html
     baseURL: system://unix/fs
     tags:
@@ -272,7 +272,7 @@ apis:
   - name: Process Management API
     description: >-
       System calls for process creation, execution, termination, and control.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man2/fork.2.html
     baseURL: system://unix/process
     tags:
@@ -389,7 +389,7 @@ apis:
     description: >-
       System calls for communication between processes including pipes, signals, and
       shared memory.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man7/pipe.7.html
     baseURL: system://unix/ipc
     tags:
@@ -610,7 +610,7 @@ apis:
   - name: Memory Management API
     description: >-
       System calls for memory allocation, mapping, and protection.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man2/mmap.2.html
     baseURL: system://unix/memory
     tags:
@@ -705,7 +705,7 @@ apis:
   - name: System Information API
     description: >-
       System calls for retrieving system information and configuration.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man2/uname.2.html
     baseURL: system://unix/sysinfo
     tags:
@@ -827,7 +827,7 @@ apis:
     description: >-
       POSIX threads (pthreads) interface for creating and managing threads, mutexes,
       condition variables, and thread-specific data.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man7/pthreads.7.html
     baseURL: system://unix/pthreads
     tags:
@@ -996,7 +996,7 @@ apis:
     description: >-
       System calls for monitoring multiple file descriptors for readiness, enabling
       event-driven and non-blocking I/O patterns.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man2/select.2.html
     baseURL: system://unix/io-multiplex
     tags:
@@ -1051,7 +1051,7 @@ apis:
   - name: POSIX Semaphores API
     description: >-
       POSIX named and unnamed semaphore interfaces for process and thread synchronization.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man7/sem_overview.7.html
     baseURL: system://unix/semaphores
     tags:
@@ -1126,7 +1126,7 @@ apis:
     description: >-
       POSIX message queue interfaces for exchanging messages between processes with
       priority support.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man7/mq_overview.7.html
     baseURL: system://unix/mqueue
     tags:
@@ -1215,7 +1215,7 @@ apis:
     description: >-
       POSIX terminal interface (termios) and device control system calls for managing
       terminals, serial ports, and device parameters.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man3/termios.3.html
     baseURL: system://unix/terminal
     tags:
@@ -1311,7 +1311,7 @@ apis:
     description: >-
       POSIX advisory file locking interfaces for coordinating file access between
       processes.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://man7.org/linux/man-pages/man2/fcntl.2.html
     baseURL: system://unix/file-locking
     tags:
