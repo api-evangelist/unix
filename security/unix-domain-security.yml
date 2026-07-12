@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: man7.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 19 19:55:29 2026 GMT
+  hsts: false
+domains:
+- domain: man7.org
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

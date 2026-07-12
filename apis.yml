@@ -20,6 +20,8 @@ tags:
   - System-Calls
   - Unix
 common:
+  - type: DomainSecurity
+    url: security/unix-domain-security.yml
   - type: Documentation
     url: https://pubs.opengroup.org/onlinepubs/9799919799/
   - type: Documentation
