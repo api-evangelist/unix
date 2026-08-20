@@ -23,6 +23,15 @@ created: '2024-01-15'
 modified: '2026-04-18'
 specificationVersion: '0.23'
 tags:
+  - C API
+  - Ieee-1003
+  - Kernel
+  - Open-Group
+  - Operating System
+  - POSIX
+  - System-Calls
+  - Unix
+tags_raw:
   - C-Api
   - Ieee-1003
   - Kernel
@@ -85,6 +94,11 @@ apis:
     humanURL: https://man7.org/linux/man-pages/dir_section_2.html
     baseURL: system://unix/fs
     tags:
+      - Directories
+      - File
+      - Filesystem
+      - IO
+    tags_raw:
       - Directories
       - Files
       - Filesystem
@@ -407,6 +421,12 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man7/pipe.7.html
     baseURL: system://unix/ipc
     tags:
+      - IPC
+      - Pipes
+      - Shared-Memory
+      - Signals
+      - Sockets
+    tags_raw:
       - Ipc
       - Pipes
       - Shared-Memory
@@ -628,6 +648,11 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man2/mmap.2.html
     baseURL: system://unix/memory
     tags:
+      - Allocations
+      - Memory
+      - Mmap
+      - Virtual-Memory
+    tags_raw:
       - Allocation
       - Memory
       - Mmap
@@ -723,6 +748,12 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man2/uname.2.html
     baseURL: system://unix/sysinfo
     tags:
+      - Configuration
+      - Group
+      - Information
+      - System
+      - User
+    tags_raw:
       - Configuration
       - Groups
       - Information
@@ -1015,6 +1046,13 @@ apis:
     baseURL: system://unix/io-multiplex
     tags:
       - Event-Driven
+      - IO
+      - Multiplexing
+      - Non-Blocking
+      - poll
+      - Select
+    tags_raw:
+      - Event-Driven
       - Io
       - Multiplexing
       - Non-Blocking
@@ -1069,6 +1107,11 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man7/sem_overview.7.html
     baseURL: system://unix/semaphores
     tags:
+      - Concurrency
+      - IPC
+      - Semaphores
+      - Synchronization
+    tags_raw:
       - Concurrency
       - Ipc
       - Semaphores
@@ -1144,6 +1187,11 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man7/mq_overview.7.html
     baseURL: system://unix/mqueue
     tags:
+      - Asynchronous
+      - IPC
+      - Message Queues
+      - Messaging
+    tags_raw:
       - Asynchronous
       - Ipc
       - Message-Queues
