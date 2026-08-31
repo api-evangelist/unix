@@ -34,12 +34,12 @@ created: '2024-01-15'
 modified: '2026-04-18'
 specificationVersion: '0.23'
 tags:
-  - C API
+  - C-Api
   - Ieee-1003
   - Kernel
   - Open-Group
-  - Operating System
-  - POSIX
+  - Operating-System
+  - Posix
   - System-Calls
   - Unix
 tags_raw:
@@ -108,7 +108,7 @@ apis:
       - Directories
       - File
       - Filesystem
-      - IO
+      - Io
     tags_raw:
       - Directories
       - Files
@@ -432,7 +432,7 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man7/pipe.7.html
     baseURL: system://unix/ipc
     tags:
-      - IPC
+      - Ipc
       - Pipes
       - Shared-Memory
       - Signals
@@ -659,7 +659,7 @@ apis:
     humanURL: https://man7.org/linux/man-pages/man2/mmap.2.html
     baseURL: system://unix/memory
     tags:
-      - Allocations
+      - Allocation
       - Memory
       - Mmap
       - Virtual-Memory
@@ -1057,10 +1057,10 @@ apis:
     baseURL: system://unix/io-multiplex
     tags:
       - Event-Driven
-      - IO
+      - Io
       - Multiplexing
       - Non-Blocking
-      - poll
+      - Poll
       - Select
     tags_raw:
       - Event-Driven
@@ -1119,7 +1119,7 @@ apis:
     baseURL: system://unix/semaphores
     tags:
       - Concurrency
-      - IPC
+      - Ipc
       - Semaphores
       - Synchronization
     tags_raw:
@@ -1199,8 +1199,8 @@ apis:
     baseURL: system://unix/mqueue
     tags:
       - Asynchronous
-      - IPC
-      - Message Queues
+      - Ipc
+      - Message-Queues
       - Messaging
     tags_raw:
       - Asynchronous
