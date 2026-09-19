@@ -1200,7 +1200,7 @@ apis:
     tags:
       - Asynchronous
       - IPC
-      - Message Queues
+      - Message Queue
       - Messaging
     tags_raw:
       - Asynchronous
